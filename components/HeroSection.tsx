@@ -64,7 +64,6 @@ export default function HeroSection() {
           loop
           playsInline
           className="w-full h-full object-cover"
-          poster="/assets/about-hero.jpg"
         >
           <source src="/assets/hero-bg.mp4" type="video/mp4" />
         </video>
