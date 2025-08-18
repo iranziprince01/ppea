@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Converter - Probity Partners East Africa</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8fafc;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .favicon-preview {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .favicon-display {
+            display: inline-block;
+            margin: 10px;
+        }
+        .favicon-display img {
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            background: white;
+        }
+        .instructions {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .step {
+            background: #f8fafc;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .step h3 {
+            color: #1e40af;
+            margin-top: 0;
+        }
+        .download-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .download-btn {
+            background: #1e40af;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            transition: background 0.2s;
+        }
+        .download-btn:hover {
+            background: #1e3a8a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Favicon Design - Probity Partners East Africa</h1>
+        
+        <div class="favicon-preview">
+            <h2>Favicon Preview</h2>
+            <div class="favicon-display">
+                <h4>16x16 (Browser Tab)</h4>
+                <img src="/favicon.svg" width="16" height="16" alt="16x16 Favicon">
+            </div>
+            <div class="favicon-display">
+                <h4>32x32 (Standard)</h4>
+                <img src="/favicon.svg" width="32" height="32" alt="32x32 Favicon">
+            </div>
+            <div class="favicon-display">
+                <h4>64x64 (High DPI)</h4>
+                <img src="/favicon.svg" width="64" height="64" alt="64x64 Favicon">
+            </div>
+            <div class="favicon-display">
+                <h4>180x180 (Apple Touch)</h4>
+                <img src="/favicon.svg" width="180" height="180" alt="180x180 Apple Touch Icon">
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 Design Description</h3>
+            <p><strong>Modern Law Firm Favicon</strong> featuring:</p>
+            <ul>
+                <li>🔵 <strong>Primary Blue (#1e40af)</strong> - Trust, professionalism, stability</li>
+                <li>⚖️ <strong>Scales of Justice</strong> - Legal authority and fairness</li>
+                <li>🔷 <strong>Geometric accents</strong> - Modern, corporate aesthetic</li>
+                <li>⚪ <strong>White elements</strong> - Clean, professional appearance</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🔄 Step 1: Convert SVG to Required Formats</h3>
+            <p>You need to convert the SVG favicon to the following formats:</p>
+            
+            <div class="download-links">
+                <a href="/favicon.svg" class="download-btn" download>Download SVG</a>
+            </div>
+
+            <h4>Required Formats:</h4>
+            <ul>
+                <li><strong>favicon.ico</strong> - 16x16, 32x32, 48x48 pixels (multi-size ICO)</li>
+                <li><strong>favicon.png</strong> - 32x32 pixels (standard favicon)</li>
+                <li><strong>apple-touch-icon.png</strong> - 180x180 pixels (iOS devices)</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🛠️ Step 2: Conversion Tools</h3>
+            <p>Use these online tools to convert the SVG:</p>
+            
+            <h4>For ICO files:</h4>
+            <ul>
+                <li><a href="https://convertio.co/svg-ico/" target="_blank">Convertio.co</a> - SVG to ICO</li>
+                <li><a href="https://favicon.io/favicon-converter/" target="_blank">Favicon.io</a> - Complete favicon generator</li>
+                <li><a href="https://www.favicon-generator.org/" target="_blank">Favicon Generator</a> - Multiple formats</li>
+            </ul>
+
+            <h4>For PNG files:</h4>
+            <ul>
+                <li><a href="https://cloudconvert.com/svg-to-png" target="_blank">CloudConvert</a> - SVG to PNG</li>
+                <li><a href="https://convertio.co/svg-png/" target="_blank">Convertio.co</a> - SVG to PNG</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>📁 Step 3: File Placement</h3>
+            <p>After conversion, place the files in your <code>public/</code> folder:</p>
+            
+            <div class="code-block">
+public/
+├── favicon.ico          # Multi-size ICO file
+├── favicon.svg          # SVG version (already created)
+├── favicon.png          # 32x32 PNG version
+├── apple-touch-icon.png # 180x180 PNG for Apple devices
+└── manifest.webmanifest # Web app manifest (already created)
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>✅ Step 4: Verification</h3>
+            <p>Once you've placed the converted files:</p>
+            <ol>
+                <li>Restart your Next.js development server</li>
+                <li>Check the browser tab for the favicon</li>
+                <li>Test on mobile devices for Apple touch icon</li>
+                <li>Verify in browser developer tools</li>
+            </ol>
+        </div>
+
+        <div class="instructions">
+            <h3>🎯 Current Status</h3>
+            <p><strong>✅ Completed:</strong></p>
+            <ul>
+                <li>SVG favicon design</li>
+                <li>Web app manifest</li>
+                <li>Layout.tsx favicon references</li>
+                <li>Placeholder files for conversion</li>
+            </ul>
+            
+            <p><strong>⏳ Pending:</strong></p>
+            <ul>
+                <li>Convert SVG to ICO format</li>
+                <li>Convert SVG to PNG formats</li>
+                <li>Replace placeholder files</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🚀 Quick Start</h3>
+            <p>To get your favicon working immediately:</p>
+            <ol>
+                <li>Download the SVG file above</li>
+                <li>Go to <a href="https://favicon.io/favicon-converter/" target="_blank">Favicon.io</a></li>
+                <li>Upload the SVG and generate all formats</li>
+                <li>Download and place files in <code>public/</code> folder</li>
+                <li>Restart your development server</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

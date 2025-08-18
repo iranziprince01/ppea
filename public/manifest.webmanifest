@@ -1,0 +1,31 @@
+{
+  "name": "Probity Partners East Africa",
+  "short_name": "PPEA",
+  "description": "Leading law firm in East Africa providing expert legal services across multiple practice areas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "legal", "professional"],
+  "lang": "en",
+  "dir": "ltr"
+}

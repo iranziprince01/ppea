@@ -1,0 +1,495 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { ArrowLeft, Linkedin, Mail, MapPin, Award, Users, BookOpen, Globe } from 'lucide-react'
+
+interface TeamMember {
+  _id: string
+  name: string
+  position: string
+  shortBio: string
+  photo: string
+  slug: { current: string }
+  isPartner: boolean
+  specialties: string[]
+  fullBio?: string
+  qualifications?: string[]
+  experience?: string[]
+  achievements?: string[]
+  socialMedia?: {
+    linkedin?: string
+    twitter?: string
+  }
+}
+
+interface TeamMemberProfileProps {
+  slug: string
+}
+
+export default function TeamMemberProfile({ slug }: TeamMemberProfileProps) {
+  const [member, setMember] = useState<TeamMember | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchMemberData = async () => {
+      try {
+        // Get member data from the comprehensive team data
+        const memberData = getMemberData(slug)
+        setMember(memberData)
+      } catch (error) {
+        console.error('Error fetching member data:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchMemberData()
+  }, [slug])
+
+  const getMemberData = (slug: string): TeamMember | null => {
+    const teamData = {
+      'alice-umulisa': {
+        _id: '1',
+        name: 'Adv. KAYIGAMBA UMULISA ALICE',
+        position: 'Managing Partner',
+        shortBio: 'Senior Lawyer | Legal Strategist | Legal Consultant | Legal Scholar | Expert in Human Rights | Specialist in Public International Law | Banking and Commercial Practice',
+        photo: '/assets/Profile pictures/Alice.jpg',
+        slug: { current: 'alice-umulisa' },
+        isPartner: true,
+        specialties: ['Corporate Law', 'Strategic Legal Counsel', 'Leadership', 'Human Rights', 'Public International Law'],
+        fullBio: `Alice Umulisa Kayigamba is the Managing Partner of the firm and leads the Litigation and Legal Advisory Unit with distinction. A highly respected legal professional, Alice holds a Bachelor of Laws (LLB) from the Independent University of Kigali (ULK) and a Postgraduate Diploma in Legal Practice from the Institute of Legal Practice and Development (ILPD).
+
+With over 15 years of active legal practice, Alice is a Senior Member of the Rwanda Bar Association and serves on its Governing Committee, contributing to the advancement of legal standards and professional ethics in Rwanda. Her career is marked by a strong record of litigation success, legal advisory excellence, and institutional leadership.
+
+Alice has significant experience advising the Criminal Investigation Department of the Rwanda National Police, where she provided high-level legal support on criminal investigations, inter-agency cooperation, and procedural compliance. She is an expert in cross-border legal matters, including extradition procedures and rogatory commissions, and brings deep insight into modern policing techniques, gender-based violence (GBV), and victim-centered counselling.
+
+Beyond criminal law, Alice has developed a robust practice in business and commercial law. She regularly advises companies on corporate governance, regulatory compliance, contract structuring and negotiation, shareholder relations, and commercial dispute resolution. Her strategic approach to business law has made her a trusted legal advisor to both local enterprises and international clients operating in Rwanda.
+
+A passionate advocate for justice, Alice has represented numerous clients on a pro bono basis, particularly through the Rwanda Bar Association's legal aid programs. Her dedication to public service, combined with her strong legal acumen, has earned her recognition as a leading voice in Rwanda's legal landscape.
+
+She is a proud member of both the Rwanda Bar Association and the East Africa Law Society, and continues to contribute to the profession through mentorship, public engagement, and legal reform initiatives.`,
+        qualifications: ['LL.B, Independent University of Kigali (ULK)', 'Postgraduate Diploma in Legal Practice, Institute of Legal Practice and Development (ILPD)', 'Member, Rwanda Bar Association Committee', 'Member, East Africa Law Society'],
+        experience: ['Managing Partner at Probity Partners East Africa', 'Senior Member of Rwanda Bar Association', 'Legal Advisor to Criminal Investigation Department of Rwanda National Police', 'Expert in cross-border legal matters', 'Specialist in business and commercial law'],
+        achievements: [`Over 15 years of active legal practice`, `Serves on Rwanda Bar Association Governing Committee`, `Expert in extradition procedures and rogatory commissions`, `Trusted legal advisor to local and international clients`, `Leading voice in Rwanda's legal landscape`]
+      },
+      'keza-ntaganda': {
+        _id: '2',
+        name: 'Adv. Keza Ntaganda Lys',
+        position: 'Associate',
+        shortBio: 'Corporate | Banking & Finance Law | Arbitration & Humanitarian Law Practitioner',
+        photo: '/assets/Profile pictures/Keza.jpg',
+        slug: { current: 'keza-ntaganda' },
+        isPartner: false,
+        specialties: ['Corporate Law', 'Banking & Finance', 'Arbitration', 'Humanitarian Law'],
+        fullBio: `Keza Ntaganda Lys is a skilled and versatile lawyer at the firm, with a strong background in both corporate and public interest law. She holds a Bachelor of Laws from the University of Rwanda and a Postgraduate Diploma in Legal Practice from the Institute of Legal Practice and Development. She joined the Rwanda Bar Association in 2024 and is a Member of East Africa Law Society.
+
+Throughout her legal career, Keza has built knowledge in banking and financial law, commercial contracts, international trade finance, and investment banking, alongside strong capabilities in humanitarian law, project management, and alternative dispute resolution. Her experience spans key roles in financial institutions, legal aid organizations, and private legal practice, giving her a well-rounded and strategic legal perspective.
+
+As an aspiring arbitrator, Keza is certified in domestic and international arbitration, commercial contract drafting, and programme and project management, among others. Her multidisciplinary approach and client-focused mindset make her a valuable advisor in complex, cross-sector legal matters.`,
+        qualifications: ['LL.B, University of Rwanda', 'Postgraduate Diploma in Legal Practice, ILPD', 'Member, Rwanda Bar Association (2024)', 'Member, East Africa Law Society'],
+        experience: ['Corporate and public interest law', 'Banking and financial law', 'Commercial contracts', 'International trade finance', 'Investment banking', 'Humanitarian law', 'Project management', 'Alternative dispute resolution'],
+        achievements: ['Certified in domestic and international arbitration', 'Certified in commercial contract drafting', 'Certified in programme and project management', 'Well-rounded experience in financial institutions and legal aid organizations']
+      },
+      'rene-munyamahoro': {
+        _id: '3',
+        name: 'Dr. Munyamahoro Rene',
+        position: 'Senior Associate',
+        shortBio: 'PhD, LLM, LL.B | Advocate | Legal Scholar | Expert in International Investment Law & Human Rights',
+        photo: '/assets/Profile pictures/Rene.jpg',
+        slug: { current: 'rene-munyamahoro' },
+        isPartner: true,
+        specialties: ['International Investment Law', 'Human Rights', 'Business Transactions', 'Contract Law'],
+        fullBio: `Dr. Munyamahoro Rene is an accomplished legal scholar, seasoned advocate, and educator with over two decades of experience spanning academia, legal practice, and public interest law. He holds a PhD in International Investment Law and Human Rights from the University of Nairobi, a Master of Laws (LL.M) in Business Law, and a Bachelor of Laws (LL.B) from the National University of Rwanda.
+
+A member of the Rwanda Bar Association since 2004, Dr. Rene has practiced law extensively, specializing in business transactions, contract law, tort law, investment law, competition law, labour law, and family law. His professional experience also includes working as a Primary Court Judge, a legal aid attorney for refugees, and a consultant for legal reforms and governance studies in Rwanda.
+
+In academia, Dr. Rene has held lectureship positions at the University of Rwanda, Kigali Independent University, and INES Ruhengeri, where he taught a wide range of subjects including contract law, tort law, commercial law, public procurement, and consumer protection law. He also served as Head of the Department of Law at Kigali Independent University and as a trainer in legal practice and contract drafting at the Institute of Legal Practice and Development (ILPD).
+
+Beyond teaching, he has conducted and led numerous research initiatives, notably with Transparency International Rwanda, the Rwandan Judiciary, the Legal Aid Forum, and the Office of the Ombudsman. His research interests focus on anti-corruption, access to justice, whistleblower protection, alternative sentencing, and judicial efficiency. His contributions include the development of legal aid guides, bench books on commercial law, and evaluations of justice sector reforms.
+
+Dr. Rene is also certified in teaching and assessment in higher learning institutions, legal practice, and English proficiency, and has continually advanced his skills in classroom management, instructional technology, and collaborative teaching.`,
+        qualifications: ['PhD in International Investment Law and Human Rights, University of Nairobi', 'Master of Laws (LL.M) in Business Law', 'Bachelor of Laws (LL.B), National University of Rwanda', 'Member, Rwanda Bar Association (since 2004)'],
+        experience: ['Over two decades of legal practice', 'Primary Court Judge', 'Legal aid attorney for refugees', 'Consultant for legal reforms and governance studies', 'Lecturer at multiple universities', 'Head of Department of Law at Kigali Independent University'],
+        achievements: ['Extensive research with Transparency International Rwanda', 'Contributions to legal aid guides and bench books', 'Evaluations of justice sector reforms', 'Certified in teaching and assessment in higher learning institutions']
+      },
+      'furaha-umutoni': {
+        _id: '4',
+        name: 'Dr Furaha Umutoni Alida',
+        position: 'Senior Associate',
+        shortBio: 'PhD, LLM, LL.B | Senior Researcher | Specialist in Gender, Identity & Peacebuilding',
+        photo: '/assets/Profile pictures/Furaha.jpg',
+        slug: { current: 'furaha-umutoni' },
+        isPartner: true,
+        specialties: ['Gender Issues', 'Identity', 'Peacebuilding', 'Human Rights'],
+        fullBio: `Dr Furaha Umutoni Alida is a Senior Researcher at the Center for Conflict Management, College of Arts and Social Sciences, University of Rwanda. She holds a PhD in Peace and Development Studies from the University of Gothenburg, School of Global Studies. Her doctoral thesis is entitled "Being in Between? Exploring Identity Construction Among Rwandophone Congolese". She also holds a Bachelor degree in Law and a Master degree in Human Rights.
+
+She is active in the field of women and children rights, particularly in terms of gender related issues. Prior to CCM, Alida has worked with the Rwanda National Commission of Human rights, the Association HAGURUKA and RCN Justice & Démocratie, a Belgian organization based in Rwanda. She has published a number of articles in peer reviewed journals and she has participated in many projects and consultancy, among them, the Community Dialogue for Peace, the research Action on Rwandan democratic citizenship, the interdisciplinary consultation on the Responsibility to protect, Rwanda's political culture, democracy and power sharing in Rwanda, assessment of the 2010 Presidential Elections in Rwanda, a study on the development of grouped settlement in rural areas in Rwanda – land conflicts aspect, the Assessment of ABUNZI Committee Activities from 2004 - 2018.
+
+As a senior Lecturer, Dr Alida Furaha has also developed new curriculum and review modules for the university of Rwanda, Center for Conflict Management and for the Ministry of defence/Rwanda Peace Academy.
+
+Areas of research interest: Identity, Gender issues, conflict, peace, security, human rights in the Great Lakes Region.`,
+        qualifications: ['PhD in Peace and Development Studies, University of Gothenburg', 'Master degree in Human Rights', 'Bachelor degree in Law', 'Senior Researcher at Center for Conflict Management, University of Rwanda'],
+        experience: ['Senior Researcher at Center for Conflict Management', 'Worked with Rwanda National Commission of Human Rights', 'Worked with Association HAGURUKA', 'Worked with RCN Justice & Démocratie', 'Senior Lecturer at University of Rwanda'],
+        achievements: ['Published articles in peer reviewed journals', 'Participated in Community Dialogue for Peace project', 'Research on Rwandan democratic citizenship', 'Assessment of 2010 Presidential Elections in Rwanda', 'Assessment of ABUNZI Committee Activities']
+      },
+      'mukashema-louise': {
+        _id: '5',
+        name: 'Adv. Mukashema Marie Louise',
+        position: 'Senior Associate',
+        shortBio: 'Senior Advocate | Criminal Defense & Family Law Specialist | Legal Strategist',
+        photo: '/assets/Profile pictures/Louise.jpg',
+        slug: { current: 'mukashema-louise' },
+        isPartner: true,
+        specialties: ['Criminal Defense', 'Family Law', 'Legal Strategy', 'Victim Protection'],
+        fullBio: `Adv. Mukashema is a distinguished senior advocate with over 17 years of experience in the legal profession, recognized for her exceptional command of family law and criminal defense litigation. A trusted name in Rwanda's legal community, she is known for delivering strategic, client-focused legal representation, particularly in high-stakes and sensitive matters.
+
+She holds a Bachelor of Laws (LL.B) and a Diploma in Legal Practice, and is an active member of both the Rwanda Bar Association and the East Africa Law Society, engaging in regional collaboration on legal reform and professional development.
+
+Mukashema began her legal career in the non-governmental sector, where she contributed to justice and human rights programs that strengthened legal access for underserved populations. Since then, she has been consistently involved in high-profile criminal defense cases, complex divorce proceedings, and public interest litigation—earning a reputation for her dedication, discretion, and legal acumen.
+
+Beyond the courtroom, Mukashema has contributed to research initiatives and legal advocacy projects that have had a lasting impact on Rwanda's justice sector. Her work often intersects with issues of gender justice, victim protection, and legal education.
+
+Her approach is deeply client-centered, ensuring that every client receives personalized attention, empathetic counsel, and a tailored legal strategy that aligns with their specific needs and circumstances.
+
+With a career marked by integrity, resilience, and a commitment to justice, Mukashema continues to be a leading voice and mentor within the legal profession.`,
+        qualifications: ['Bachelor of Laws (LL.B)', 'Diploma in Legal Practice', 'Member, Rwanda Bar Association', 'Member, East Africa Law Society'],
+        experience: ['Over 17 years of legal practice', 'Criminal defense litigation', 'Family law specialist', 'Public interest litigation', 'Legal advocacy projects'],
+        achievements: ['High-profile criminal defense cases', 'Complex divorce proceedings', 'Contributions to justice sector research', 'Gender justice advocacy', 'Victim protection initiatives']
+      },
+      'aloys-ntirushwamaboko': {
+        _id: '6',
+        name: 'Adv. Aloys Ntirushwamaboko',
+        position: 'Senior Associate',
+        shortBio: 'LL.M, LL.B, DLP | Advocate | Legal Advisor | Specialist in Public International Law & Commercial Practice',
+        photo: '/assets/Profile pictures/Aloys.jpg',
+        slug: { current: 'aloys-ntirushwamaboko' },
+        isPartner: true,
+        specialties: ['Public International Law', 'Commercial Practice', 'Legal Advisory', 'Corporate Law'],
+        fullBio: `Aloys is a Rwandan legal practitioner with over 8 years of experience in both public and private legal sectors. He holds a Master's Degree in Public International Law (LL.M), a Bachelor's Degree in Law (LL.B), and a Diploma in Legal Practice (DLP), all obtained from the University of Rwanda. Since 2017, he has been a licensed Advocate and active member of the Rwanda Bar Association and the East African Law Society.
+
+Aloys currently serves as a key member of the legal team at Probity Partners East Africa Ltd, one of Rwanda's leading law firms. He provides legal representation and advisory services to a wide array of governmental and corporate clients. His portfolio includes the City of Kigali, Rwanda Medical Supply, Gabiro Agribusiness Hub Ltd, and Business Development Fund Ltd, among others. On the private sector front, he works closely with major financial and commercial institutions.
+
+Before joining the firm, Aloys served as Legal and Compliance Officer at HASHI ENERGY LTD and HASHI ENERGY HOLDINGS LTD, where he oversaw compliance matters related to major United Nations contracts, specifically supporting operations for MINUSCA (Central African Republic) and MONUSCO (Democratic Republic of Congo).
+
+He also has a strong background in legal aid and public interest law through his work with The Legal Aid Forum (LAF), contributing to refugee protection initiatives in collaboration with the UNHCR in Rwanda.`,
+        qualifications: [`Master's Degree in Public International Law (LL.M), University of Rwanda`, `Bachelor's Degree in Law (LL.B), University of Rwanda`, `Diploma in Legal Practice (DLP), University of Rwanda`, `Member, Rwanda Bar Association (since 2017)`, `Member, East African Law Society`],
+        experience: ['Over 8 years of legal practice', 'Legal representation for governmental and corporate clients', 'Legal and Compliance Officer at HASHI ENERGY', 'Work with The Legal Aid Forum (LAF)', 'Refugee protection initiatives with UNHCR'],
+        achievements: ['Key member of legal team at PPEA', 'Portfolio includes City of Kigali, Rwanda Medical Supply', 'Support for MINUSCA and MONUSCO operations', 'Contributions to refugee protection initiatives']
+      },
+      'aziza-lola': {
+        _id: '7',
+        name: 'Adv. Aziza Lola',
+        position: 'Senior Associate',
+        shortBio: 'Legal Analyst | Specialist in Criminal Justice & Victim Advocacy',
+        photo: '/assets/Profile pictures/Aziza.jpg',
+        slug: { current: 'aziza-lola' },
+        isPartner: true,
+        specialties: ['Criminal Justice', 'Victim Advocacy', 'Transitional Justice', 'Legal Analysis'],
+        fullBio: `Mrs. Aziza Lola is a dedicated Advocate at the Rwanda Bar Association with a strong commitment to criminal justice reform, victim rights, and international legal practice. She holds a Bachelor of Laws (LL.B) from the National University of Rwanda and a Diploma in Legal Practice. She is also certified in Mediation from Edwards Mediation Academy (USA) and is currently undergoing specialized training in Child Justice.
+
+Aziza has a robust background in criminal law, transitional justice, and victim support, gained through years of experience in both domestic and international legal institutions. She has served as a Pro Bono Lawyer with Certa Foundation, where she represented and supported victims in court, ensuring their voices were heard both during legal proceedings and throughout their personal recovery journeys.
+
+Internationally, Aziza played a key role at the International Criminal Tribunal for Rwanda (ICTR), first as a Legal Researcher in the Office of the Prosecutor, and later as a Witness and Victims Support Assistant, where she supported survivors and witnesses in navigating the judicial process during one of the most important post-genocide justice efforts in Africa.
+
+Aziza also worked as an Analyst for Criminal Law Revision at the Rwanda Law Reform Commission, contributing to the modernization and harmonization of Rwanda's legal framework. In addition, she served as a Technical Assistant in the Justice Component of GIZ (German International Cooperation), where she supported the National Public Prosecution Authority in enhancing prosecutorial strategies, particularly in the area of evidence collection and case building.
+
+Aziza is known for her compassion, professionalism, and analytical rigor. Her unique blend of local and international experience makes her a vital contributor to justice sector initiatives in Rwanda and beyond.
+
+She is fluent in Kinyarwanda, English, French, Kiswahili, and Lingala, making her exceptionally well-suited for work in multicultural and multilingual legal environments.`,
+        qualifications: ['Bachelor of Laws (LL.B), National University of Rwanda', 'Diploma in Legal Practice', 'Certified in Mediation from Edwards Mediation Academy (USA)', 'Specialized training in Child Justice', 'Member, Rwanda Bar Association'],
+        experience: ['Pro Bono Lawyer with Certa Foundation', 'Legal Researcher in Office of the Prosecutor at ICTR', 'Witness and Victims Support Assistant at ICTR', 'Analyst for Criminal Law Revision at Rwanda Law Reform Commission', 'Technical Assistant in Justice Component of GIZ'],
+        achievements: ['Key role in ICTR post-genocide justice efforts', 'Contributions to Rwanda's legal framework modernization', 'Support for National Public Prosecution Authority', 'Multilingual capabilities in 5 languages']
+      },
+      'jules-lambert': {
+        _id: '8',
+        name: 'Adv. Jules Lambert Ineza',
+        position: 'Senior Associate',
+        shortBio: 'Advocate | Legal Consultant | Researcher in Justice and Development',
+        photo: '/assets/Profile pictures/Jules.jpg',
+        slug: { current: 'jules-lambert' },
+        isPartner: true,
+        specialties: ['Legal Research', 'Justice Development', 'Legal Aid', 'Policy Research'],
+        fullBio: `Adv. Jules Lambert Ineza is a licensed Advocate with the Rwanda Bar Association and a member of the East African Law Society, with a strong background in public interest law, legal reform, and justice accessibility. He holds a Bachelor of Laws (LL.B) from the University of Lay Adventists of Kigali (UNILAK) and a Postgraduate Diploma in Legal Practice from the Institute of Legal Practice and Development (ILPD).
+
+Jules has cultivated a well-rounded legal practice that spans legal aid, advisory services, legal drafting, training, negotiation, and consultancy. His commitment to social justice is demonstrated through his work with underserved communities, where he has actively contributed to enhancing access to justice for vulnerable groups.
+
+He has been engaged in policy-informing legal research, contributing to Rwanda's legal development through the following studies:
+
+* "Towards a Just and Effective Expropriation Practice in Rwanda" (January 2022) – an assessment of the compliance of expropriating entities with national expropriation laws, policies, and procedures.
+
+* "The Use of ICT Tools and Their Role in Accessing Legal Aid Services in Rwanda" (October 2022) – a study examining how digital technologies facilitated access to justice, particularly during the COVID-19 pandemic.
+
+Jules is known for his strong analytical skills, practical legal insights, and passion for justice reform. With a career grounded in community legal empowerment and a growing reputation in legal research and consultancy, he continues to contribute meaningfully to the advancement of legal systems in Rwanda and the East African region.`,
+        qualifications: ['Bachelor of Laws (LL.B), University of Lay Adventists of Kigali (UNILAK)', 'Postgraduate Diploma in Legal Practice, Institute of Legal Practice and Development (ILPD)', 'Member, Rwanda Bar Association', 'Member, East African Law Society'],
+        experience: ['Legal aid and advisory services', 'Legal drafting and training', 'Negotiation and consultancy', 'Work with underserved communities', 'Policy-informing legal research'],
+        achievements: ['Research on expropriation practice in Rwanda', 'Study on ICT tools for legal aid services', 'Contributions to justice accessibility', 'Community legal empowerment initiatives']
+      },
+      'bakunda-emmanuel': {
+        _id: '9',
+        name: 'BAKUNDA Emmanuel',
+        position: 'Associate',
+        shortBio: 'Legal Advisor | IP & Business Law Enthusiast',
+        photo: '/assets/Profile pictures/Emmanuel.jpg',
+        slug: { current: 'bakunda-emmanuel' },
+        isPartner: false,
+        specialties: ['Intellectual Property', 'Business Law', 'Corporate Governance', 'Legal Drafting'],
+        fullBio: `BAKUNDA Emmanuel is a dedicated Corporate Associate with a solid academic and professional foundation in business and corporate law. He earned his Bachelor of Laws (LL.B) from the University of Rwanda, and further honed his legal skills through a Diploma in Legal Practice from the Institute of Legal Practice and Development (ILPD).
+
+Currently, Emmanuel is pursuing a Master's degree in Business Law at the University of Rwanda, further solidifying his expertise in corporate legal frameworks, regulatory compliance, and commercial transactions.
+
+Known for his analytical precision and growing command of corporate governance, legal drafting, and intellectual property rights, Emmanuel offers valuable legal advisory support to businesses. His work focuses on ensuring regulatory compliance, protecting corporate interests, and helping companies navigate complex legal environments with clarity and confidence.`,
+        qualifications: ['Bachelor of Laws (LL.B), University of Rwanda', 'Diploma in Legal Practice, Institute of Legal Practice and Development (ILPD)', 'Currently pursuing Master's degree in Business Law, University of Rwanda'],
+        experience: ['Corporate Associate', 'Business and corporate law practice', 'Legal advisory support to businesses', 'Regulatory compliance', 'Commercial transactions'],
+        achievements: ['Analytical precision in corporate governance', 'Growing expertise in intellectual property rights', 'Legal advisory support for business compliance']
+      },
+      'anny-princia': {
+        _id: '10',
+        name: 'Anny Princia Habiyaremye',
+        position: 'Legal Consultant',
+        shortBio: 'Administrative & Employment Law Specialist | Legal Professional',
+        photo: '/assets/Profile pictures/Princia.jpg',
+        slug: { current: 'anny-princia' },
+        isPartner: false,
+        specialties: ['Administrative Law', 'Employment Law', 'Legal Research', 'Cross-jurisdictional Practice'],
+        fullBio: `Anny Princia Habiyaremye is a legal consultant with cross-jurisdictional experience in Rwanda and Canada, offering a unique perspective on legal practice in both civil law and common law systems. She holds a Bachelor's degree in Law and brings a strong foundation in administrative law, employment law, and legal research.
+
+Her professional background includes working with reputable institutions such as PPEA, the Legal Aid Forum, and Great Lakes Lawyers in Rwanda, as well as Emond Harnden LLP—a leading employment and labour law firm in Ottawa, Canada. These experiences have shaped her into a client-oriented legal professional with the ability to provide clear, strategic, and practical legal solutions across diverse contexts.
+
+Anny is known for her analytical rigor, effective communication, and her commitment to delivering accessible legal guidance tailored to individual client needs. Her multicultural legal exposure enables her to navigate complex regulatory environments and offer comparative insights that support sound decision-making.`,
+        qualifications: ['Bachelor's degree in Law', 'Cross-jurisdictional experience in Rwanda and Canada', 'Experience in both civil law and common law systems'],
+        experience: ['Legal consultant at PPEA', 'Work with Legal Aid Forum', 'Work with Great Lakes Lawyers in Rwanda', 'Experience at Emond Harnden LLP in Canada', 'Administrative and employment law practice'],
+        achievements: ['Cross-jurisdictional legal expertise', 'Client-oriented legal solutions', 'Multicultural legal exposure', 'Comparative legal insights']
+      },
+      'mary-stella': {
+        _id: '11',
+        name: 'Mary Stella Irasubiza',
+        position: 'Junior Legal Associate',
+        shortBio: 'Legal Researcher | Court & Document Drafter',
+        photo: '/assets/Profile pictures/Stella.jpg',
+        slug: { current: 'mary-stella' },
+        isPartner: false,
+        specialties: ['Legal Research', 'Document Drafting', 'Court Submissions', 'Legal Support'],
+        fullBio: `Stella is a valued member of the legal team at the firm, where she serves as a Junior Legal Associate. She is an ambitious and dedicated legal professional committed to growing and diversifying her expertise in the legal field. Her core responsibilities include drafting court submissions, reviewing and preparing a wide range of legal documents, and conducting in-depth legal research to support litigation and advisory work.
+
+Stella holds a Bachelor's degree in Law (LL.B) from the University of Lay Adventists of Kigali (UNILAK). She consistently demonstrates a strong work ethic and a proactive approach to professional development, staying abreast of evolving legal trends and best practices. Her drive for excellence and attention to detail contribute to delivering high-quality, client-focused legal support.`,
+        qualifications: [`Bachelor's degree in Law (LL.B), University of Lay Adventists of Kigali (UNILAK)`],
+        experience: ['Junior Legal Associate', 'Drafting court submissions', 'Document preparation and review', 'Legal research support', 'Litigation and advisory support'],
+        achievements: ['Strong work ethic and professional development', 'Attention to detail in legal work', 'High-quality client-focused legal support']
+      },
+      'muhire-herve': {
+        _id: '12',
+        name: 'Muhire Herve',
+        position: 'IT Support Specialist',
+        shortBio: 'IT support specialist / Software engineer / Passionate Graphic designer',
+        photo: '/assets/Profile pictures/Herve.jpg',
+        slug: { current: 'muhire-herve' },
+        isPartner: false,
+        specialties: ['IT Support', 'Software Engineering', 'Graphic Design', 'System Administration'],
+        fullBio: `With over five years of hands-on experience in the field, Herve serves as an IT Support Specialist, providing reliable and efficient technical support within the company. He is known for his problem solving mindset and dedication to ensuring smooth IT operations across all departments. His daily responsibilities include diagnosing and resolving hardware and software issues, maintaining IT systems, and offering responsive support to staff members.
+
+Herve holds a Bachelor's degree in Computer Science from Mount Kenya University Rwanda (MKUR). He approaches his work with a strong sense of responsibility and continuously seeks to expand his technical knowledge. His practical experience, attention to detail, and commitment to excellence help foster a secure, efficient, and user-focused IT environment.`,
+        qualifications: [`Bachelor's degree in Computer Science, Mount Kenya University Rwanda (MKUR)`, 'Over 5 years of IT support experience'],
+        experience: ['IT Support Specialist', 'Hardware and software troubleshooting', 'IT system maintenance', 'Staff technical support', 'Problem-solving approach'],
+        achievements: ['Reliable and efficient technical support', 'Smooth IT operations across departments', 'Secure and user-focused IT environment', 'Continuous technical knowledge expansion']
+      }
+      // Add more members as needed
+    }
+
+    return teamData[slug as keyof typeof teamData] || null
+  }
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>
+      </div>
+    )
+  }
+
+  if (!member) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Team Member Not Found</h1>
+          <Link href="/team" className="text-primary-600 hover:text-primary-700">
+            ← Back to Team
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Back Button */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8"
+        >
+          <Link
+            href="/team"
+            className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium transition-colors duration-200"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Team
+          </Link>
+        </motion.div>
+
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-3xl shadow-xl overflow-hidden mb-12"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
+            {/* Photo */}
+            <div className="lg:col-span-1">
+              <div className="relative h-96 lg:h-full rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Info */}
+            <div className="lg:col-span-2 space-y-6">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                  {member.name}
+                </h1>
+                <p className="text-2xl text-primary-600 font-semibold mb-4">
+                  {member.position}
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  {member.shortBio}
+                </p>
+              </div>
+
+              {/* Specialties */}
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Areas of Expertise</h3>
+                <div className="flex flex-wrap gap-2">
+                  {member.specialties.map((specialty, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium"
+                    >
+                      {specialty}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Partner Badge */}
+              {member.isPartner && (
+                <div className="inline-flex items-center px-4 py-2 bg-secondary-100 text-secondary-700 rounded-full font-medium">
+                  <Award className="w-4 h-4 mr-2" />
+                  Partner
+                </div>
+              )}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Detailed Information */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Full Bio */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-white rounded-2xl p-8 shadow-lg"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <BookOpen className="w-6 h-6 mr-3 text-primary-600" />
+              Professional Biography
+            </h2>
+            <div className="prose prose-lg text-gray-600">
+              {member.fullBio ? (
+                member.fullBio.split('\n\n').map((paragraph, index) => (
+                  <p key={index} className="mb-4 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))
+              ) : (
+                <p className="text-gray-500 italic">
+                  Detailed biography coming soon...
+                </p>
+              )}
+            </div>
+          </motion.div>
+
+          {/* Qualifications & Experience */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="space-y-8"
+          >
+            {/* Qualifications */}
+            {member.qualifications && (
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <Award className="w-5 h-5 mr-2 text-primary-600" />
+                  Qualifications
+                </h3>
+                <ul className="space-y-2">
+                  {member.qualifications.map((qual, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-600">{qual}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Experience */}
+            {member.experience && (
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <Users className="w-5 h-5 mr-2 text-primary-600" />
+                  Experience
+                </h3>
+                <ul className="space-y-2">
+                  {member.experience.map((exp, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-600">{exp}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Achievements */}
+            {member.achievements && (
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <Globe className="w-5 h-5 mr-2 text-primary-600" />
+                  Key Achievements
+                </h3>
+                <ul className="space-y-2">
+                  {member.achievements.map((achievement, index) => (
+                    <li key={index} className="flex items-start">
+                      <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <span className="text-gray-600">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  )
+}

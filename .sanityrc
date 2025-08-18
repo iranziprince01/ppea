@@ -1,0 +1,9 @@
+{
+  "api": {
+    "projectId": "your_project_id",
+    "dataset": "production"
+  },
+  "project": {
+    "name": "Probity Partners East Africa"
+  }
+}
