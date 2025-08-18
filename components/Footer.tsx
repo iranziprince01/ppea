@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Linkedin, Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { activeClient, siteSettingsQuery } from '@/lib/sanity.client'
 
 interface SiteSettings {
@@ -30,6 +30,13 @@ interface SiteSettings {
 
 export default function Footer() {
   const [settings, setSettings] = useState<SiteSettings>({})
+
+  // X (formerly Twitter) logo as inline SVG to use updated brand
+  const XLogo = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
+      <path d="M18.244 2H21l-6.44 7.36L22 22h-6.8l-4.8-6.72L4.8 22H2l6.96-7.96L2 2h6.8l4.4 6.16L18.244 2Zm-1.19 18h1.77L7.98 4h-1.73l11.804 16Z" />
+    </svg>
+  )
 
   useEffect(() => {
     const fetchSettings = async () => {
@@ -199,52 +206,26 @@ export default function Footer() {
               © {currentYear} Probity Partners East Africa. All rights reserved.
             </div>
 
-            {/* Social Media */}
+            {/* Social Media (LinkedIn and X only) */}
             <div className="flex items-center space-x-4">
-              {settings.socialMedia?.linkedin && (
-                <a
-                  href={settings.socialMedia.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-              )}
-              {settings.socialMedia?.twitter && (
-                <a
-                  href={settings.socialMedia.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-              )}
-              {settings.socialMedia?.facebook && (
-                <a
-                  href={settings.socialMedia.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-              )}
-              {settings.socialMedia?.instagram && (
-                <a
-                  href={settings.socialMedia.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-              )}
+              <a
+                href="https://www.linkedin.com/company/probity-partners-of-east-africa/about/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary-400 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://twitter.com/ProbityPEA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary-400 transition-colors"
+                aria-label="X"
+              >
+                <XLogo className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </div>
