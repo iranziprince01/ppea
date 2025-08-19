@@ -260,7 +260,3 @@ After initial setup:
 3. **Configure SEO**: Update meta titles and descriptions for better search visibility
 4. **Test Forms**: Ensure contact forms are working properly
 5. **Deploy**: Deploy to production and configure custom domain
-
----
-
-**Built with ❤️ for Probity Partners East Africa**
