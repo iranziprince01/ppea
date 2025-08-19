@@ -115,7 +115,7 @@ const fallbackClient = {
         title: 'Probity Partners East Africa',
         description: 'Leading law firm in East Africa providing expert legal services across multiple practice areas.',
         contactInfo: {
-          address: 'Kigali, Rwanda',
+          address: 'KG 17 Ave, Kigali, Rwanda',
           phone: '+250791676618 / +250788561313',
           email: 'probitypartnersea1@gmail.com',
           workingHours: 'Mon - Fri: 8:00 AM - 6:00 PM'

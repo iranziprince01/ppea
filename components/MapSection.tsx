@@ -18,7 +18,7 @@ export default function MapSection() {
             Find <span className="text-primary-600">Us</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Visit our office in Kigali, Rwanda for in-person consultations and meetings.
+            Visit our office at KG 17 Ave, Kigali, Rwanda for in-person consultations and meetings.
           </p>
         </motion.div>
 
