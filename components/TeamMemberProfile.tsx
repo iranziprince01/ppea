@@ -232,6 +232,104 @@ const memberDetails: Record<string, {
     languages: ['English', 'Kinyarwanda', 'French'],
     detailedBio: 'Adv. Jules Lambert Ineza is a Senior Associate at the firm, combining legal practice with research in Justice and Development. He holds a Bachelor of Laws (LL.B) and a Postgraduate Diploma in Legal Practice, and has developed expertise in legal policy analysis and development law. Throughout his career, Adv. Jules has focused on understanding the intersection between legal systems and development outcomes, contributing to research initiatives that inform policy decisions. He has been involved in various development projects, providing legal analysis and policy recommendations. His work emphasizes the importance of strong legal frameworks in achieving sustainable development goals. Adv. Jules is known for his analytical approach to complex legal and policy issues.'
   },
+  'bakunda-emmanuel': {
+    name: 'BAKUNDA Emmanuel',
+    position: 'Associate',
+    academicQualifications: [
+      "Bachelor of Laws (LL.B), University of Rwanda",
+      "Diploma in Legal Practice, Institute of Legal Practice and Development (ILPD)",
+      "Pursuing Master's in Business Law, University of Rwanda"
+    ],
+    professionalExperience: [
+      'Corporate Associate',
+      'Regulatory compliance and commercial transactions',
+      'Corporate governance and legal drafting',
+      'Advisory support to businesses'
+    ],
+    researchInterests: ['Corporate Governance', 'Business Law', 'Intellectual Property', 'Commercial Transactions'],
+    publications: [],
+    memberships: [],
+    awards: [],
+    certifications: [],
+    languages: ['English', 'Kinyarwanda', 'French'],
+    detailedBio: 'BAKUNDA Emmanuel is a dedicated Corporate Associate with a solid foundation in business and corporate law. He holds an LL.B from the University of Rwanda and a Diploma in Legal Practice from ILPD, and is currently pursuing a Master’s in Business Law. Emmanuel focuses on corporate governance, regulatory compliance, contract drafting and review, and intellectual property, helping companies navigate complex legal environments with clarity and confidence.'
+  },
+  'anny-princia': {
+    name: 'Anny Princia Habiyaremye',
+    position: 'Legal Consultant',
+    academicQualifications: [
+      "Bachelor's degree in Law"
+    ],
+    professionalExperience: [
+      'Consultant with cross‑jurisdictional experience in Rwanda and Canada',
+      'Experience at PPEA, Legal Aid Forum, Great Lakes Lawyers (Rwanda)',
+      'Experience at Emond Harnden LLP (Ottawa, Canada)'
+    ],
+    researchInterests: ['Administrative Law', 'Employment Law', 'Legal Research'],
+    publications: [],
+    memberships: [],
+    awards: [],
+    certifications: [],
+    languages: ['English', 'Kinyarwanda', 'French'],
+    detailedBio: 'Anny Princia Habiyaremye is a legal consultant with cross‑jurisdictional experience in Rwanda and Canada, bringing a unique perspective across civil and common law systems. With a strong foundation in administrative and employment law and proven legal research ability, she provides clear, strategic, and practical legal solutions tailored to client needs.'
+  },
+  'mary-stella': {
+    name: 'Mary Stella Irasubiza',
+    position: 'Junior Legal Associate',
+    academicQualifications: [
+      "Bachelor's degree in Law (LL.B), University of Lay Adventists of Kigali (UNILAK)"
+    ],
+    professionalExperience: [
+      'Drafting court submissions and legal documents',
+      'Comprehensive legal research for litigation and advisory work',
+      'Document preparation and review'
+    ],
+    researchInterests: ['Legal Research', 'Litigation Support', 'Document Drafting'],
+    publications: [],
+    memberships: [],
+    awards: [],
+    certifications: [],
+    languages: ['English', 'Kinyarwanda'],
+    detailedBio: 'Mary Stella is a Junior Legal Associate focused on legal research, drafting court submissions, and preparing documents to support the firm’s litigation and advisory work. She brings a proactive approach to professional development and a strong commitment to high‑quality, client‑focused legal support.'
+  },
+  'muhire-herve': {
+    name: 'Muhire Herve',
+    position: 'IT Support Specialist',
+    academicQualifications: [
+      "Bachelor's degree in Computer Science, Mount Kenya University Rwanda (MKUR)"
+    ],
+    professionalExperience: [
+      'Diagnosing and resolving hardware/software issues',
+      'Maintaining IT systems and supporting staff',
+      'Ensuring secure, efficient, user‑focused IT operations'
+    ],
+    researchInterests: ['IT Support', 'System Administration', 'Software Engineering'],
+    publications: [],
+    memberships: [],
+    awards: [],
+    certifications: [],
+    languages: ['English', 'Kinyarwanda'],
+    detailedBio: 'With 5+ years of experience, Herve provides reliable and efficient technical support, maintaining systems and assisting teams across the firm. He is known for a problem‑solving mindset, attention to detail, and commitment to a secure and user‑focused IT environment.'
+  },
+  'ntaganda-ganza': {
+    name: 'NTAGANDA Ganza Dan',
+    position: 'IT Support Specialist',
+    academicQualifications: [
+      "Bachelor’s in Information Technology (Software Engineering), Adventist University of Central Africa"
+    ],
+    professionalExperience: [
+      'Troubleshooting hardware and software issues',
+      'Maintaining secure IT infrastructure',
+      'Supporting digital tools for legal professionals'
+    ],
+    researchInterests: ['IT Support', 'System Security', 'Software Engineering'],
+    publications: [],
+    memberships: [],
+    awards: [],
+    certifications: [],
+    languages: ['English', 'Kinyarwanda'],
+    detailedBio: 'Ganza is an IT Support Specialist experienced in maintaining reliable and secure systems in the legal sector. With a background in software development and system support, he brings a practical, problem‑solving mindset and focuses on continuous improvement and proactive support.'
+  },
   'jean-baptiste': {
     name: 'Adv. Jean Baptiste',
     position: 'Associate',
@@ -333,6 +431,11 @@ const getProfilePhoto = (slug: string) => {
     'aloys-ntirushwamaboko': '/assets/Profile pictures/Aloys.jpg',
     'aziza-lola': '/assets/Profile pictures/Aziza.jpg',
     'jules-lambert': '/assets/Profile pictures/Jules.jpg',
+    'bakunda-emmanuel': '/assets/Profile pictures/Emmanuel.jpg',
+    'anny-princia': '/assets/Profile pictures/Princia.jpg',
+    'mary-stella': '/assets/Profile pictures/Stella.jpg',
+    'muhire-herve': '/assets/Profile pictures/Herve.jpg',
+    'ntaganda-ganza': '/assets/Profile pictures/Ganza.jpg',
     'jean-baptiste': '/assets/Profile pictures/Jean.jpg',
     'jean-damascene': '/assets/Profile pictures/Damascene.jpg',
     'jean-paul': '/assets/Profile pictures/Jean-Paul.jpg',
@@ -353,7 +456,7 @@ export default function TeamMemberProfile({ slug }: TeamMemberProfileProps) {
     slug: { current: slug },
     shortBio: details?.detailedBio?.substring(0, 200) + '...' || 'Experienced legal professional',
     specialties: details?.researchInterests || [],
-    isPartner: slug === 'alice-umulisa' || slug === 'rene-munyamahoro' || slug === 'furaha-umutoni' || slug === 'mukashema-louise',
+    isPartner: slug === 'alice-umulisa' || slug === 'rene-munyamahoro' || slug === 'furaha-umutoni' || slug === 'aloys-ntirushwamaboko',
     email: undefined,
     linkedin: undefined,
     twitter: undefined,

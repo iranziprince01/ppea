@@ -41,7 +41,7 @@ export default function TeamHeroSection() {
             >
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-primary-400 rounded-full"></div>
-                <span className="text-gray-200 font-medium">13+ Years Experience</span>
+                <span className="text-gray-200 font-medium">15+ Years Experience</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-primary-400 rounded-full"></div>

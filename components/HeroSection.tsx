@@ -150,7 +150,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.6, delay: 1.0 }}
                 className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20"
               >
-                <div className="text-3xl font-bold text-white mb-2">13+</div>
+                <div className="text-3xl font-bold text-white mb-2">15+</div>
                 <div className="text-sm text-gray-200">Years Experience</div>
               </motion.div>
               

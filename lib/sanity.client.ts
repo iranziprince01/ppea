@@ -223,7 +223,7 @@ const fallbackClient = {
           shortBio: 'Senior Advocate | Criminal Defense & Family Law Specialist | Legal Strategist',
           photo: '/assets/Profile pictures/Louise.png',
           slug: { current: 'mukashema-louise' },
-          isPartner: true,
+          isPartner: false,
           specialties: ['Criminal Defense', 'Family Law', 'Legal Strategy', 'Victim Protection'],
           order: 5
         },
