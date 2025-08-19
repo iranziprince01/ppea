@@ -171,7 +171,7 @@ export default function Footer() {
                   <div className="flex items-start space-x-3">
                     <MapPin className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-300 text-sm">
-                      Kigali, Rwanda
+                      KG 17 Ave, Kigali, Rwanda
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
@@ -195,6 +195,28 @@ export default function Footer() {
                 </>
               )}
             </div>
+
+            {/* Social links moved here for visibility */}
+            <div className="pt-4 flex items-center space-x-4">
+              <a
+                href="https://www.linkedin.com/company/probity-partners-of-east-africa/about/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary-300 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://twitter.com/ProbityPEA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary-300 transition-colors"
+                aria-label="X"
+              >
+                <XLogo className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -204,28 +226,6 @@ export default function Footer() {
             {/* Copyright */}
             <div className="text-gray-400 text-sm">
               © {currentYear} Probity Partners East Africa. All rights reserved.
-            </div>
-
-            {/* Social Media (LinkedIn and X only) */}
-            <div className="flex items-center space-x-4">
-              <a
-                href="https://www.linkedin.com/company/probity-partners-of-east-africa/about/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://twitter.com/ProbityPEA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary-400 transition-colors"
-                aria-label="X"
-              >
-                <XLogo className="w-5 h-5" />
-              </a>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { Mail, Phone, MapPin, Clock, ArrowRight } from 'lucide-react'
 
 export default function ContactInfoCTA() {
-  const address = 'Kigali, Rwanda'
+  const address = 'KG 17 Ave, Kigali, Rwanda'
   const phonePrimary = '+250791676618'
   const phoneAlt = '+250788561313'
   const email = 'probitypartnersea1@gmail.com'

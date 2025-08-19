@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import HeroSection from '@/components/HeroSection'
+import RevealOnScroll from '@/components/RevealOnScroll'
 import MarqueeSection from '@/components/MarqueeSection'
 import OurStorySection from '@/components/OurStorySection'
 import TrustedBySection from '@/components/TrustedBySection'
@@ -13,13 +14,13 @@ export default function HomePage() {
     <div className="pt-20">
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
         <HeroSection />
-        <MarqueeSection />
-        <OurStorySection />
-        <TrustedBySection />
-        <WhyChooseUsSection />
-        <TeamPreviewSection />
-        <ContactSection />
-        <MapSection />
+        <RevealOnScroll><MarqueeSection /></RevealOnScroll>
+        <RevealOnScroll><OurStorySection /></RevealOnScroll>
+        <RevealOnScroll><TrustedBySection /></RevealOnScroll>
+        <RevealOnScroll><WhyChooseUsSection /></RevealOnScroll>
+        <RevealOnScroll><TeamPreviewSection /></RevealOnScroll>
+        <RevealOnScroll><ContactSection /></RevealOnScroll>
+        <RevealOnScroll><MapSection /></RevealOnScroll>
       </Suspense>
     </div>
   )

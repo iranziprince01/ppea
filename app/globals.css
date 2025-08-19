@@ -72,6 +72,15 @@
   .text-balance {
     text-wrap: balance;
   }
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .reveal-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
   
   .animation-delay-200 {
     animation-delay: 200ms;

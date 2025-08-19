@@ -114,7 +114,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white scroll-mt-24 md:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -291,7 +291,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Address</h4>
-                    <p className="text-gray-600">Kigali, Rwanda</p>
+                    <p className="text-gray-600">KG 17 Ave, Kigali, Rwanda</p>
                   </div>
                 </div>
 

@@ -4,6 +4,7 @@ import FirmHistorySection from '@/components/FirmHistorySection'
 import MissionSection from '@/components/MissionSection'
 import ValuesSection from '@/components/ValuesSection'
 import ContactInfoCTA from '@/components/ContactInfoCTA'
+import RevealOnScroll from '@/components/RevealOnScroll'
 
 export default function AboutPage() {
   return (
@@ -13,20 +14,28 @@ export default function AboutPage() {
       </Suspense>
       
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
-        <FirmHistorySection />
+        <RevealOnScroll>
+          <FirmHistorySection />
+        </RevealOnScroll>
       </Suspense>
       
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
-        <MissionSection />
+        <RevealOnScroll>
+          <MissionSection />
+        </RevealOnScroll>
       </Suspense>
       
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
-        <ValuesSection />
+        <RevealOnScroll>
+          <ValuesSection />
+        </RevealOnScroll>
       </Suspense>
       
       {/* Contact CTA Section */}
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
-        <ContactInfoCTA />
+        <RevealOnScroll>
+          <ContactInfoCTA />
+        </RevealOnScroll>
       </Suspense>
     </div>
   )

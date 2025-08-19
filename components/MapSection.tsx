@@ -29,11 +29,10 @@ export default function MapSection() {
           viewport={{ once: true }}
           className="bg-white rounded-2xl overflow-hidden shadow-lg"
         >
-          <div className="w-full">
+          <div className="w-full h-72 md:h-[450px] lg:h-[600px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.5!2d30.0615!3d-1.9441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwNTYnNDIuNyJTIDMwwrAwMycxNC40IkU!5e0!3m2!1sen!2srw!4v1234567890"
+              src="https://www.google.com/maps?q=KG%2017%20Ave%2C%20Kigali%2C%20Rwanda&output=embed"
               width="100%"
-              height="1600"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"

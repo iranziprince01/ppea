@@ -568,16 +568,7 @@ export default function TeamMemberProfile({ slug }: TeamMemberProfileProps) {
       {/* Main Content */}
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back to Team */}
-          <div className="mb-8">
-            <Link
-              href="/team"
-              className="inline-flex items-center text-primary-600 hover:text-primary-700 transition-colors duration-200"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Team
-            </Link>
-                    </div>
+          {/* Back to Team removed on valid profile pages */}
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Main Content */}

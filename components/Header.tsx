@@ -84,8 +84,14 @@ export default function Header() {
       <div className="container-max">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-4">
-            <div className="relative w-36 h-36">
+          <Link href="/" className="flex items-center space-x-4" onClick={(e) => {
+            // If already on home, scroll smoothly to top
+            if (window.location.pathname === '/') {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+          }}>
+            <div className="relative w-28 h-16 sm:w-32 sm:h-20 md:w-36 md:h-24 lg:w-36 lg:h-36">
               <Image
                 src="/assets/Logo5.png"
                 alt="Probity Partners East Africa"
