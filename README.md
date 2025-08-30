@@ -2,7 +2,7 @@
 
 A modern, responsive website for Probity Partners East Africa, a leading law firm in East Africa. Built with Next.js 14, TypeScript, Tailwind CSS, and Sanity CMS for content management.
 
-Deployed version: [probitypartnersea.com](probitypartnersea.com)
+Deployed version: [click here](probitypartnersea.com)
 
 ## 🚀 Features
 
