@@ -8,35 +8,26 @@ import RevealOnScroll from '@/components/RevealOnScroll'
 
 export default function AboutPage() {
   return (
-    <div className="pt-20">
+    <div>
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
         <AboutHeroSection />
       </Suspense>
-      
-      <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
-        <RevealOnScroll>
-          <FirmHistorySection />
-        </RevealOnScroll>
-      </Suspense>
-      
-      <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
-        <RevealOnScroll>
-          <MissionSection />
-        </RevealOnScroll>
-      </Suspense>
-      
-      <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
-        <RevealOnScroll>
-          <ValuesSection />
-        </RevealOnScroll>
-      </Suspense>
-      
-      {/* Contact CTA Section */}
-      <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
-        <RevealOnScroll>
-          <ContactInfoCTA />
-        </RevealOnScroll>
-      </Suspense>
+
+      <RevealOnScroll>
+        <FirmHistorySection />
+      </RevealOnScroll>
+
+      <RevealOnScroll delay={0.2}>
+        <MissionSection />
+      </RevealOnScroll>
+
+      <RevealOnScroll delay={0.3}>
+        <ValuesSection />
+      </RevealOnScroll>
+
+      <RevealOnScroll delay={0.4}>
+        <ContactInfoCTA />
+      </RevealOnScroll>
     </div>
   )
 }

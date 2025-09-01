@@ -6,17 +6,14 @@ import ContactInfoCTA from '@/components/ContactInfoCTA'
 
 export default function ServicesPage() {
   return (
-    <div className="pt-20">
+    <div>
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
         <ServicesHeroSection />
-        <RevealOnScroll>
-          <ServicesGridSection />
-        </RevealOnScroll>
+        <ServicesGridSection />
       </Suspense>
-
-      <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
+      <RevealOnScroll>
         <ContactInfoCTA />
-      </Suspense>
+      </RevealOnScroll>
     </div>
   )
 }

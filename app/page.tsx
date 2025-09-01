@@ -11,16 +11,30 @@ import MapSection from '@/components/MapSection'
 
 export default function HomePage() {
   return (
-    <div className="pt-20">
+    <div>
       <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading...</div>}>
         <HeroSection />
-        <RevealOnScroll><MarqueeSection /></RevealOnScroll>
-        <RevealOnScroll><OurStorySection /></RevealOnScroll>
-        <RevealOnScroll><TrustedBySection /></RevealOnScroll>
-        <RevealOnScroll><WhyChooseUsSection /></RevealOnScroll>
-        <RevealOnScroll><TeamPreviewSection /></RevealOnScroll>
-        <RevealOnScroll><ContactSection /></RevealOnScroll>
-        <RevealOnScroll><MapSection /></RevealOnScroll>
+        <RevealOnScroll>
+          <MarqueeSection />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.2}>
+          <OurStorySection />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.3}>
+          <TrustedBySection />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.4}>
+          <WhyChooseUsSection />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.5}>
+          <TeamPreviewSection />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.6}>
+          <ContactSection />
+        </RevealOnScroll>
+        <RevealOnScroll delay={0.7}>
+          <MapSection />
+        </RevealOnScroll>
       </Suspense>
     </div>
   )

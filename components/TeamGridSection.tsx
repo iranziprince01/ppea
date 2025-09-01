@@ -216,62 +216,65 @@ export default function TeamGridSection() {
         </motion.div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {displayTeamMembers.map((member, index) => (
-            <motion.div
-              key={member._id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              {/* Member Photo */}
-              <div className="relative h-80 overflow-hidden bg-gray-50">
-                {member.photo ? (
-                  <div className="w-full h-full flex items-center justify-center p-3">
-                    <img
-                      src={typeof member.photo === 'string' ? member.photo : urlFor(member.photo).url()}
-                      alt={member.name}
-                      className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                ) : (
-                  <div className="w-full h-full bg-primary-100 flex items-center justify-center">
-                    <div className="text-center text-primary-400">
-                      <div className="w-20 h-20 bg-primary-200 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <span className="text-2xl font-bold">
-                          {member.name ? member.name.split(' ').map((n: string) => n[0]).join('') : 'M'}
-                        </span>
-                      </div>
-                      <p className="text-sm">Photo</p>
+        <div className="w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
+            {displayTeamMembers.map((member, index) => (
+              <motion.div
+                key={member._id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                {/* Member Photo */}
+                <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden bg-gray-50">
+                  {member.photo ? (
+                    <div className="w-full h-full flex items-center justify-center p-3">
+                      <img
+                        src={typeof member.photo === 'string' ? member.photo : urlFor(member.photo).url()}
+                        alt={member.name}
+                        className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
                     </div>
-                  </div>
-                )}
-              </div>
+                  ) : (
+                    <div className="w-full h-full bg-primary-100 flex items-center justify-center">
+                      <div className="text-center text-primary-400">
+                        <div className="w-20 h-20 bg-primary-200 rounded-full flex items-center justify-center mx-auto mb-2">
+                          <span className="text-2xl font-bold">
+                            {member.name ? member.name.split(' ').map((n: string) => n[0]).join('') : 'M'}
+                          </span>
+                        </div>
+                        <p className="text-sm">Photo</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
 
-              {/* Member Info */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-primary-600 font-medium mb-3">
-                  {member.position}
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  {member.shortBio || (member as any).bio || `Experienced legal professional specializing in ${member.specialties?.join(', ') || 'legal services'}.`}
-                </p>
-                {/* View Profile Button */}
-                <Link
-                  href={`/team/${member.slug.current}`}
-                  className="inline-flex items-center space-x-2 text-primary-600 hover:text-primary-700 font-medium group-hover:translate-x-1 transition-all duration-300 pt-2"
-                >
-                  <span>View Profile</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+                {/* Member Info */}
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                    {member.name}
+                  </h3>
+                  <p className="text-primary-600 font-medium mb-3 text-sm sm:text-base">
+                    {member.position}
+                  </p>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+                    {member.shortBio || (member as any).bio || `Experienced legal professional specializing in ${member.specialties?.join(', ') || 'legal services'}.`}
+                  </p>
+                  {/* View Profile Button */}
+                  <Link
+                    href={`/team/${member.slug.current}`}
+                    className="inline-flex items-center space-x-2 text-primary-600 hover:text-primary-700 font-medium group-hover:translate-x-1 transition-all duration-300 pt-2"
+                  >
+                    <span>View Profile</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

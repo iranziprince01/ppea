@@ -75,11 +75,11 @@ export default function Footer() {
     <footer className="bg-secondary-800 text-white">
       <div className="container-max">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-12 sm:py-16">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <div className="relative w-28 h-28">
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28">
                 <Image
                   src="/assets/logo4.png"
                   alt="Probity Partners East Africa"

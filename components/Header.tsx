@@ -82,7 +82,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg transition-all duration-300">
       <div className="container-max">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-4" onClick={(e) => {
             // If already on home, scroll smoothly to top
@@ -91,7 +91,7 @@ export default function Header() {
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }
           }}>
-            <div className="relative w-28 h-16 sm:w-32 sm:h-20 md:w-36 md:h-24 lg:w-36 lg:h-36">
+            <div className="relative w-24 h-16 sm:w-28 sm:h-20 md:w-32 md:h-24 lg:w-36 lg:h-36">
               <Image
                 src="/assets/Logo5.png"
                 alt="Probity Partners East Africa"
@@ -226,19 +226,21 @@ export default function Header() {
                               transition={{ duration: 0.2 }}
                               className="pl-4 space-y-1 overflow-hidden"
                             >
-                              {defaultServices.map((service) => (
-                                <Link
-                                  key={service._id}
-                                  href={`/services/${service.slug.current}`}
-                                  className="block py-2 text-gray-600 hover:text-secondary-800 transition-colors border-l-2 border-transparent hover:border-secondary-500 pl-3"
-                                  onClick={() => {
-                                    setIsOpen(false)
-                                    setIsServicesOpen(false)
-                                  }}
-                                >
-                                  {service.title}
-                                </Link>
-                              ))}
+                              <div className="max-h-64 overflow-y-auto overscroll-contain">
+                                {defaultServices.map((service) => (
+                                  <Link
+                                    key={service._id}
+                                    href={`/services/${service.slug.current}`}
+                                    className="block py-2 text-gray-600 hover:text-secondary-800 transition-colors border-l-2 border-transparent hover:border-secondary-500 pl-3"
+                                    onClick={() => {
+                                      setIsOpen(false)
+                                      setIsServicesOpen(false)
+                                    }}
+                                  >
+                                    {service.title}
+                                  </Link>
+                                ))}
+                              </div>
                               <div className="pt-2 border-t border-gray-100 mt-2">
                                 <Link
                                   href="/services"
