@@ -86,12 +86,12 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-tight"
               >
                 <span className="block text-white mb-2">
                   Leading Legal Experts
                 </span>
-                <span className="block text-4xl md:text-5xl lg:text-6xl text-blue-300">
+                <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-blue-300">
                   in East Africa
                 </span>
               </motion.h1>
@@ -104,10 +104,10 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="space-y-4"
             >
-              <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-lg">
+                              <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed max-w-lg">
                 Providing exceptional legal services across East Africa with unmatched dedication and expertise.
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed max-w-lg">
+                              <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-lg">
                 Formerly known as Bona Fide Law Chambers, we are a regional law firm serving East Africa, headquartered in Kigali, Rwanda since 2011.
               </p>
             </motion.div>
@@ -143,35 +143,35 @@ export default function HeroSection() {
             className="space-y-6"
           >
             {/* Stats Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20"
+                className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center border border-white/20"
               >
-                <div className="text-3xl font-bold text-white mb-2">15+</div>
-                <div className="text-sm text-gray-200">Years Experience</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">15+</div>
+                <div className="text-xs sm:text-sm text-gray-200">Years Experience</div>
               </motion.div>
               
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20"
+                className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center border border-white/20"
               >
-                <div className="text-3xl font-bold text-white mb-2">Fast</div>
-                <div className="text-sm text-gray-200">Response Time</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">Fast</div>
+                <div className="text-xs sm:text-sm text-gray-200">Response Time</div>
               </motion.div>
               
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
-                className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20"
+                className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center border border-white/20 sm:col-span-2 lg:col-span-1"
               >
-                <div className="text-3xl font-bold text-white mb-2">Multi</div>
-                <div className="text-sm text-gray-200">Practice Areas</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">Multi</div>
+                <div className="text-xs sm:text-sm text-gray-200">Practice Areas</div>
               </motion.div>
             </div>
 
