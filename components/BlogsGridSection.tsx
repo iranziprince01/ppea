@@ -54,7 +54,7 @@ export default function BlogsGridSection() {
       title: 'Understanding Corporate Governance in East Africa',
       slug: { current: 'corporate-governance-east-africa' },
       excerpt: 'A comprehensive guide to corporate governance practices and regulations across East African markets.',
-      author: { name: 'Sarah Mwangi', photo: '/assets/Avatar.png' },
+      author: { name: 'Adv. Aloys Ntirushwamaboko', photo: '/assets/Profile pictures/Aloys.jpg' },
       mainImage: '/assets/corporate.jpg',
       publishedAt: '2024-01-15T10:00:00Z',
       categories: ['Corporate Law'],
@@ -66,7 +66,7 @@ export default function BlogsGridSection() {
       title: 'Recent Changes in Employment Law: What Employers Need to Know',
       slug: { current: 'employment-law-changes-2024' },
       excerpt: 'Key updates to employment legislation and their implications for businesses and employees.',
-      author: { name: 'James Kamau', photo: '/assets/Avatar.png' },
+      author: { name: 'Adv. Aloys Ntirushwamaboko', photo: '/assets/Profile pictures/Aloys.jpg' },
       mainImage: '/assets/employment.jpg',
       publishedAt: '2024-01-10T14:30:00Z',
       categories: ['Employment Law'],
@@ -78,7 +78,7 @@ export default function BlogsGridSection() {
       title: 'Real Estate Investment: Legal Considerations for Foreign Investors',
       slug: { current: 'real-estate-foreign-investment' },
       excerpt: 'Essential legal aspects foreign investors should understand when investing in East African real estate.',
-      author: { name: 'Grace Wanjiku', photo: '/assets/Avatar.png' },
+      author: { name: 'Adv. Aloys Ntirushwamaboko', photo: '/assets/Profile pictures/Aloys.jpg' },
       mainImage: '/assets/real estate.jpg',
       publishedAt: '2024-01-05T09:15:00Z',
       categories: ['Real Estate'],
@@ -90,7 +90,7 @@ export default function BlogsGridSection() {
       title: 'Tax Planning Strategies for Multinational Corporations',
       slug: { current: 'tax-planning-multinationals' },
       excerpt: 'Effective tax planning approaches for multinational corporations operating in East Africa.',
-      author: { name: 'Mary Njeri', photo: '/assets/Avatar.png' },
+      author: { name: 'Adv. Aloys Ntirushwamaboko', photo: '/assets/Profile pictures/Aloys.jpg' },
       mainImage: '/assets/tax.jpg',
       publishedAt: '2023-12-28T16:45:00Z',
       categories: ['Tax Law'],
@@ -102,7 +102,7 @@ export default function BlogsGridSection() {
       title: 'Intellectual Property Protection in the Digital Age',
       slug: { current: 'ip-protection-digital-age' },
       excerpt: 'Modern approaches to protecting intellectual property in an increasingly digital business environment.',
-      author: { name: 'Peter Odhiambo', photo: '/assets/Avatar.png' },
+      author: { name: 'Adv. Aloys Ntirushwamaboko', photo: '/assets/Profile pictures/Aloys.jpg' },
       mainImage: '/assets/intellectual.jpg',
       publishedAt: '2023-12-20T11:20:00Z',
       categories: ['Intellectual Property'],
@@ -114,7 +114,7 @@ export default function BlogsGridSection() {
       title: 'Alternative Dispute Resolution: Benefits for Business',
       slug: { current: 'alternative-dispute-resolution-business' },
       excerpt: 'How ADR methods can provide efficient and cost-effective solutions for business disputes.',
-      author: { name: 'David Ochieng', photo: '/assets/Avatar.png' },
+      author: { name: 'Adv. Aloys Ntirushwamaboko', photo: '/assets/Profile pictures/Aloys.jpg' },
       mainImage: '/assets/Litigation.jpg',
       publishedAt: '2023-12-15T13:10:00Z',
       categories: ['Litigation'],
@@ -348,7 +348,7 @@ export default function BlogsGridSection() {
           </motion.div>
         )}
 
-        {/* Call to Action */}
+        {/* Welcome Message */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -356,19 +356,27 @@ export default function BlogsGridSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-white rounded-2xl p-8 shadow-lg max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Stay Updated with Legal Insights
+          <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 shadow-lg max-w-4xl mx-auto text-white">
+            <h3 className="text-3xl font-bold mb-4">
+              Welcome to Our Legal Knowledge Hub
             </h3>
-            <p className="text-gray-600 mb-6">
-              Subscribe to our newsletter for the latest legal updates, insights, and expert analysis.
+            <p className="text-primary-100 text-lg mb-6 max-w-2xl mx-auto">
+              We're delighted to have you explore our comprehensive collection of legal insights. Our expert team is committed to sharing valuable knowledge that empowers your business decisions and legal understanding.
             </p>
-            <Link
-              href="/#contact"
-              className="btn-primary"
-            >
-              Subscribe Now
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                href="/services"
+                className="bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors duration-300"
+              >
+                Explore Our Services
+              </Link>
+              <Link
+                href="/#contact"
+                className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors duration-300"
+              >
+                Get Legal Consultation
+              </Link>
+            </div>
           </div>
         </motion.div>
       </div>
