@@ -54,7 +54,7 @@ export default function BlogsGridSection() {
       title: 'Understanding Corporate Governance in East Africa',
       slug: { current: 'corporate-governance-east-africa' },
       excerpt: 'A comprehensive guide to corporate governance practices and regulations across East African markets.',
-      author: { name: 'Adv. Aloys Ntirushwamaboko', photo: '/assets/Profile pictures/Aloys.jpg' },
+      author: { name: 'Adv. Aloys Ntirushwamaboko', photo: '/assets/Profile%20pictures/Aloys.jpg' },
       mainImage: '/assets/corporate.jpg',
       publishedAt: '2024-01-15T10:00:00Z',
       categories: ['Corporate Law'],
@@ -66,7 +66,7 @@ export default function BlogsGridSection() {
       title: 'Recent Changes in Employment Law: What Employers Need to Know',
       slug: { current: 'employment-law-changes-2024' },
       excerpt: 'Key updates to employment legislation and their implications for businesses and employees.',
-      author: { name: 'Adv. Alice Umulisa Kayigamba', photo: '/assets/Profile pictures/Alice.jpg' },
+      author: { name: 'Adv. Alice Umulisa Kayigamba', photo: '/assets/Profile%20pictures/Alice.jpg' },
       mainImage: '/assets/employment.jpg',
       publishedAt: '2024-01-10T14:30:00Z',
       categories: ['Employment Law'],
@@ -78,7 +78,7 @@ export default function BlogsGridSection() {
       title: 'Real Estate Investment: Legal Considerations for Foreign Investors',
       slug: { current: 'real-estate-foreign-investment' },
       excerpt: 'Essential legal aspects foreign investors should understand when investing in East African real estate.',
-      author: { name: 'Dr. Rene Munyamahoro', photo: '/assets/Profile pictures/Rene.jpg' },
+      author: { name: 'Dr. Rene Munyamahoro', photo: '/assets/Profile%20pictures/Rene.jpg' },
       mainImage: '/assets/real estate.jpg',
       publishedAt: '2024-01-05T09:15:00Z',
       categories: ['Real Estate'],
@@ -90,7 +90,7 @@ export default function BlogsGridSection() {
       title: 'Tax Planning Strategies for Multinational Corporations',
       slug: { current: 'tax-planning-multinationals' },
       excerpt: 'Effective tax planning approaches for multinational corporations operating in East Africa.',
-      author: { name: 'Adv. Keza Ntaganda Lys', photo: '/assets/Profile pictures/Keza.jpg' },
+      author: { name: 'Adv. Keza Ntaganda Lys', photo: '/assets/Profile%20pictures/Keza.jpg' },
       mainImage: '/assets/tax.jpg',
       publishedAt: '2023-12-28T16:45:00Z',
       categories: ['Tax Law'],
@@ -102,7 +102,7 @@ export default function BlogsGridSection() {
       title: 'Intellectual Property Protection in the Digital Age',
       slug: { current: 'ip-protection-digital-age' },
       excerpt: 'Modern approaches to protecting intellectual property in an increasingly digital business environment.',
-      author: { name: 'Dr. Furaha Umutoni Alida', photo: '/assets/Profile pictures/Furaha.jpg' },
+      author: { name: 'Dr. Furaha Umutoni Alida', photo: '/assets/Profile%20pictures/Furaha.jpg' },
       mainImage: '/assets/intellectual.jpg',
       publishedAt: '2023-12-20T11:20:00Z',
       categories: ['Intellectual Property'],
@@ -114,7 +114,7 @@ export default function BlogsGridSection() {
       title: 'Alternative Dispute Resolution: Benefits for Business',
       slug: { current: 'alternative-dispute-resolution-business' },
       excerpt: 'How ADR methods can provide efficient and cost-effective solutions for business disputes.',
-      author: { name: 'Adv. Mukashema Marie Louise', photo: '/assets/Profile pictures/Louise.png' },
+      author: { name: 'Adv. Mukashema Marie Louise', photo: '/assets/Profile%20pictures/Louise.png' },
       mainImage: '/assets/Litigation.jpg',
       publishedAt: '2023-12-15T13:10:00Z',
       categories: ['Litigation'],
@@ -278,18 +278,19 @@ export default function BlogsGridSection() {
 
                 {/* Author */}
                 <div className="flex items-center space-x-3 pt-3 border-t border-gray-100">
-                  <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
-                    {post.author.photo ? (
-                      <img
-                        src={typeof post.author.photo === 'string' ? post.author.photo : urlFor(post.author.photo).url()}
-                        alt={post.author.name}
-                        className="w-full h-full rounded-full object-cover"
-                      />
-                    ) : (
-                      <span className="text-primary-600 text-sm font-medium">
-                        {post.author.name ? post.author.name.split(' ').map((n: string) => n[0]).join('') : 'A'}
-                      </span>
-                    )}
+                  <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center overflow-hidden">
+                    <img
+                      src={post.author.photo}
+                      alt={post.author.name}
+                      className="w-full h-full rounded-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                    <span className="text-primary-600 text-sm font-medium hidden">
+                      {post.author.name ? post.author.name.split(' ').map((n: string) => n[0]).join('') : 'A'}
+                    </span>
                   </div>
                   <span className="text-sm text-gray-600">{post.author.name}</span>
                 </div>
