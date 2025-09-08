@@ -23,7 +23,7 @@ export default function AboutHeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
             >
-              About <span className="text-blue-300">Probity Partners</span> <span className="text-yellow-300">East Africa</span>
+              About <span className="text-blue-300">Probity Partners</span> East Africa
             </motion.h1>
 
             <motion.p
