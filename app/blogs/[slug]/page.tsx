@@ -198,18 +198,19 @@ export default async function BlogPostPage({ params }: PageProps) {
             {post.author && (
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    {post.author.photo ? (
-                      <img
-                        src={typeof post.author.photo === 'string' ? post.author.photo : urlFor(post.author.photo).url()}
-                        alt={post.author.name}
-                        className="w-full h-full rounded-full object-cover"
-                      />
-                    ) : (
-                      <span className="text-primary-600 text-xl font-bold">
-                        {post.author.name ? post.author.name.split(' ').map((n: string) => n[0]).join('') : 'A'}
-                      </span>
-                    )}
+                  <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <img
+                      src={post.author.photo}
+                      alt={post.author.name}
+                      className="w-full h-full rounded-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                    <span className="text-primary-600 text-xl font-bold hidden">
+                      {post.author.name ? post.author.name.split(' ').map((n: string) => n[0]).join('') : 'A'}
+                    </span>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">
