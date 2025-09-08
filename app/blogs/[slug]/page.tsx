@@ -4,6 +4,7 @@ import { urlFor } from '@/lib/sanity.client'
 import { PortableText } from '@portabletext/react'
 import { Calendar, User, Clock, Tag, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import AuthorImage from './AuthorImage'
 
 interface BlogPost {
   _id: string
@@ -53,13 +54,13 @@ export default async function BlogPostPage({ params }: PageProps) {
       notFound()
     }
 
-    const formatDate = (dateString: string) => {
-      return new Date(dateString).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
-    }
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  }
 
     return (
       <div className="pt-20">
@@ -198,20 +199,11 @@ export default async function BlogPostPage({ params }: PageProps) {
             {post.author && (
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
-                    <img
-                      src={post.author.photo}
-                      alt={post.author.name}
-                      className="w-full h-full rounded-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                      }}
-                    />
-                    <span className="text-primary-600 text-xl font-bold hidden">
-                      {post.author.name ? post.author.name.split(' ').map((n: string) => n[0]).join('') : 'A'}
-                    </span>
-                  </div>
+                  <AuthorImage 
+                    src={post.author.photo}
+                    alt={post.author.name}
+                    name={post.author.name}
+                  />
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">
                       {post.author.name || 'Unknown Author'}
