@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer'
 
 export async function POST(request: NextRequest) {
   try {
-    const { firstName, lastName, email, phone, service, message } = await request.json()
+    const { firstName, lastName, email, phone, serviceRequired, message } = await request.json()
 
     // Validate required fields
     if (!firstName || !lastName || !email || !message) {
@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
             <p><strong>Name:</strong> ${firstName} ${lastName}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-            <p><strong>Service Required:</strong> ${service || 'Not specified'}</p>
+            <p><strong>Service Required:</strong> ${serviceRequired || 'Not specified'}</p>
           </div>
           <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px;">
             <h3 style="color: #374151; margin-top: 0;">Message</h3>
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
             
             <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #1e40af;">
               <h3 style="color: #1e40af; margin-top: 0;">Your Inquiry Details:</h3>
-              <p style="margin: 5px 0;"><strong>Service Required:</strong> ${service || 'General Inquiry'}</p>
+              <p style="margin: 5px 0;"><strong>Service Required:</strong> ${serviceRequired || 'General Inquiry'}</p>
               <p style="margin: 5px 0;"><strong>Submitted:</strong> ${new Date().toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
