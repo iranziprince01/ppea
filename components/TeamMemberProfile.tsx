@@ -138,7 +138,7 @@ const memberDetails: Record<string, {
   'furaha-umutoni': {
     name: 'Dr. Furaha Umutoni Alida',
     position: 'Senior Associate',
-    academicQualifications: ['PhD in Peace and development stuidies', 'Master of Laws (LL.M)', 'Bachelor of Laws (LL.B)'],
+    academicQualifications: ['PhD in Peace and development studies', 'Master of Human Rights', 'Bachelor of Laws (LL.B)'],
     professionalExperience: [
       'Senior Associate at Probity Partners East Africa',
       'Senior Researcher in Gender and Peacebuilding',
@@ -149,7 +149,7 @@ const memberDetails: Record<string, {
     researchInterests: ['Gender Studies', 'Identity Politics', 'Peacebuilding', 'Conflict Resolution', 'Human Rights', 'Social Justice'],
     publications: ['Research on gender and peacebuilding in East Africa', 'Publications on identity and conflict resolution'],
     memberships: ['Rwanda Bar Association', 'East Africa Law Society'],
-    awards: ['PhD in Gender Studies', 'Recognition for peacebuilding research'],
+    awards: ['PhD in Peace, Development and Security', 'Recognition for peacebuilding research'],
     certifications: ['Legal Practice Certification', 'Gender Studies Certification'],
     languages: ['English', 'Kinyarwanda', 'French'],
     detailedBio: 'Dr. Furaha Umutoni Alida is a Senior Associate at the firm and a distinguished researcher specializing in gender, identity, and peacebuilding. She holds a PhD in Gender, Identity and Peacebuilding, along with a Master of Laws (LL.M) and Bachelor of Laws (LL.B). Dr. Furaha brings a unique interdisciplinary perspective to legal practice, combining her legal expertise with deep insights into gender studies, identity politics, and peacebuilding processes. Her research focuses on understanding how gender dynamics and identity issues intersect with conflict resolution and peacebuilding efforts in East Africa. She has conducted extensive research on the role of women in peace processes, the impact of identity politics on legal frameworks, and strategies for inclusive conflict resolution. At Probity Partners East Africa, Dr. Furaha specializes in cases involving gender-based violence, human rights violations, and peacebuilding initiatives. She advises organizations working on conflict resolution and provides legal support for peacebuilding projects. Her expertise extends to international human rights law, particularly as it relates to gender equality and social justice. Dr. Furaha is committed to using the law as a tool for social change and has been involved in various initiatives aimed at promoting gender equality and peace in the region. She regularly contributes to academic and policy discussions on these critical issues and is recognized for her innovative approach to combining legal practice with peacebuilding research.'
