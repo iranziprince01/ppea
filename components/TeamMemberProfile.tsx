@@ -138,7 +138,7 @@ const memberDetails: Record<string, {
   'furaha-umutoni': {
     name: 'Dr. Furaha Umutoni Alida',
     position: 'Senior Associate',
-    academicQualifications: ['PhD in Gender, Identity and Peacebuilding', 'Master of Laws (LL.M)', 'Bachelor of Laws (LL.B)'],
+    academicQualifications: ['PhD in Peace and development stuidies', 'Master of Laws (LL.M)', 'Bachelor of Laws (LL.B)'],
     professionalExperience: [
       'Senior Associate at Probity Partners East Africa',
       'Senior Researcher in Gender and Peacebuilding',
