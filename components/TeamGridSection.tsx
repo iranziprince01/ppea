@@ -55,7 +55,7 @@ export default function TeamGridSection() {
       _id: '4',
       name: 'Dr Furaha Umutoni Alida',
       position: 'Senior Associate',
-      shortBio: 'PhD, LLM, LL.B | Senior Researcher | Specialist in Gender, Identity & Peacebuilding',
+      shortBio: 'PhD, Master: Human Rights, LL.B | Senior Researcher | Specialist in Gender, Identity & Peacebuilding',
       photo: '/assets/Profile pictures/Furaha.jpg',
       slug: { current: 'furaha-umutoni' },
       isPartner: true,
