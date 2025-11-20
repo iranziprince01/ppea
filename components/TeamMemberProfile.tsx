@@ -233,8 +233,8 @@ const memberDetails: Record<string, {
     detailedBio: 'Adv. Jules Lambert Ineza is a Senior Associate at the firm, combining legal practice with research in Justice and Development. He holds a Bachelor of Laws (LL.B) and a Postgraduate Diploma in Legal Practice, and has developed expertise in legal policy analysis and development law. Throughout his career, Adv. Jules has focused on understanding the intersection between legal systems and development outcomes, contributing to research initiatives that inform policy decisions. He has been involved in various development projects, providing legal analysis and policy recommendations. His work emphasizes the importance of strong legal frameworks in achieving sustainable development goals. Adv. Jules is known for his analytical approach to complex legal and policy issues.'
   },
   'bakunda-emmanuel': {
-    name: 'BAKUNDA Emmanuel',
-    position: 'Associate',
+    name: 'Adv. BAKUNDA Emmanuel',
+    position: 'Senior Associate',
     academicQualifications: [
       "Bachelor of Laws (LL.B), University of Rwanda",
       "Diploma in Legal Practice, Institute of Legal Practice and Development (ILPD)",
