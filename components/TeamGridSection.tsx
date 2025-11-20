@@ -103,8 +103,8 @@ export default function TeamGridSection() {
     },
     {
       _id: '9',
-      name: 'BAKUNDA Emmanuel',
-      position: 'Associate',
+      name: 'Adv. BAKUNDA Emmanuel',
+      position: 'Senior Associate',
       shortBio: 'Legal Advisor | IP & Business Law Enthusiast',
       photo: '/assets/Profile pictures/Emmanuel.jpg',
       slug: { current: 'bakunda-emmanuel' },
