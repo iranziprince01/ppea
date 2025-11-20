@@ -234,7 +234,7 @@ const memberDetails: Record<string, {
   },
   'bakunda-emmanuel': {
     name: 'Adv. BAKUNDA Emmanuel',
-    position: 'Senior Associate',
+    position: 'Associate',
     academicQualifications: [
       "Bachelor of Laws (LL.B), University of Rwanda",
       "Diploma in Legal Practice, Institute of Legal Practice and Development (ILPD)",
